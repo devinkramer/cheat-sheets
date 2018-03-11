@@ -2,8 +2,7 @@
 ```bash
 servers.csc.aws1prdcsc{9,1[012]}_csprod_ctgrd_com.cpu_wio
 ```
- 
-### this would also work
+this would also work
 ```bash
 servers.csc.aws1prdcsc{9,10,11,12}_csprod_ctgrd_com.cpu_wio
 ```
