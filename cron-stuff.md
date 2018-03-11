@@ -1,5 +1,5 @@
 # Cron Syntax
-
+```bash
   *     *    *    *    *  command to be executed
   -     -    -    -    -
   |     |     |     |     |
@@ -8,10 +8,16 @@
   |     |     +--------- day of month (1 - 31)
   |     +----------- hour (0 - 23)
   +------------- min (0 - 59)
+```
 
-## Dont be a dork add this to your cron jobs so you box is not sending your lame SDTOUT and STDERR to an non-existing email box.
+## Output redirection
+Dont be a dork add this to your cron jobs so you box is not sending your lame SDTOUT and STDERR to an non-existing email box.
 ```bash
 >/dev/null 2>&1
+```
+Dont be a real dork and leave cron sendind email to root on failure set MAILTO to nothing
+```bash
+MAILTO=''
 ```
 # Examples
 ## Example log file find and compress cron
