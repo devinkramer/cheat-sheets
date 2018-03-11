@@ -99,22 +99,31 @@ git push -u origin TICKET
 7. Go to UI and submit pull request
 
 
-# Cleanup Branches
-# Local
+## Cleanup Branches
+### Local
+```bash
 git branch -D bugfix
-# Remote
+```
+### Remote
+```bash
 git push origin --delete <branchName>
-# or
+```
+or
+```bash
 git push origin :<branchName>
+```
 
-
-# Rebase a branch
+## Rebase a branch
+```bash
 BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 git pull --rebase origin production
 git push origin ${BRANCH} --force
+```
 
-# reset your local repo to match the remote branch
-# (this has worked when i need it to, but i haven't tried with branches)
-#git reset --hard origin/HEAD
+## reset your local repo to match the remote branch
+(this has worked when i need it to, but i haven't tried with branches)
+```bash
+git reset --hard origin/HEAD
 git reset —hard
+```
 
