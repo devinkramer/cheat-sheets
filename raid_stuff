@@ -1,0 +1,17 @@
+HP Smart Array CLI
+
+Disk Status
+/opt/smartstorageadmin/ssacli/bin/ssacli ctrl slot=0 pd all show status
+Disk Details
+/opt/smartstorageadmin/ssacli/bin/ssacli ctrl slot=0 pd all show detail
+Logical Drive Status
+ /opt/smartstorageadmin/ssacli/bin/ssacli ctrl slot=0 ld all show status
+Logical Drive Details
+/opt/smartstorageadmin/ssacli/bin/ssacli ctrl slot=0 ld 2 show
+Controller Details
+/opt/smartstorageadmin/ssacli/bin/ssacli ctrl all show detail
+
+PSSC MegaCLi
+
+
+Softlayer?
