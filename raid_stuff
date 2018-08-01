@@ -13,5 +13,10 @@ Controller Details
 
 PSSC MegaCLi
 
+Virtual Drive
+MegaCli64 -LDInfo -Lall -aALL
+Physical Drive
+MegaCli64 -PDList -aALL
+
 
 Softlayer?
