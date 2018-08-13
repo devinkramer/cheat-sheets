@@ -17,6 +17,8 @@ Virtual Drive
 MegaCli64 -LDInfo -Lall -aALL
 Physical Drive
 MegaCli64 -PDList -aALL
+Dump all info
+sudo /opt/MegaRAID/MegaCli/MegaCli64 -AdpAllInfo -aALL
 
 
 Softlayer
