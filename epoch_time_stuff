@@ -1,0 +1,5 @@
+# Convert a specific date and time to Unix time
+date --date='08/15/2018 17:13:00' +"%s%N" | cut -b1-13
+
+# Display current time in unix time
+date +%s
