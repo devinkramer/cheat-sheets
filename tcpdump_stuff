@@ -1,0 +1,18 @@
+# Get tcpdump output to a file.
+
+tcpdump -w /tmp/tcpdump &
+
+# Read the output file and spit back top ips.
+
+tcpdump -n -r /tmp/tcpdump|awk '{print $2}'|cut -d. -f1-4|sort|uniq -c|sort -nr|head
+
+# Capture API Request Payload.
+tcpdump -w ~/out -A -s 0 -i eth0 'tcp dst port 8080 and dst host vir1prdpaw1.prod.cs and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+#
+#Using tcpdump to sniff HTTP traffic from a specific host
+#This is mostly just a reminder to myself about my preferred parameters to tcpdump on linux, so that I don't have to keep reading the man page.
+#
+tcpdump -c 20 -s 0 -i eth1 -A host 192.168.1.1 and tcp port http
+
+# dump ascii data for tcp proto only and ignore port 22 traffic
+tcpdump  -nn -A  not dst port 22 and not src port 22 and tcp
