@@ -1,3 +1,5 @@
 # Powercycle a node
 ipmitool -I lanplus -H $IPMI_HOST -E -U root -L OPERATOR power cycle
 
+# Hard Reset the BMC Controller
+ipmitool -H $IPMI_HOST -E -U admin mc reset cold
