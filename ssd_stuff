@@ -1,0 +1,4 @@
+# Check the lifespan of you ssd
+smartctl -a /dev/sde | grep Media_Wearout_Indicator
+# Starts at 100 and goes down from there
+

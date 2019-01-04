@@ -33,3 +33,8 @@ curl  -gks "https://$GRAPHITE/render?from=-2hours&format=json&target=ganglia.FOP
 echo "local.random.diceroll 4 `date +%s`" | nc  graphite 3003
 echo "ganglia.FDTP-NRT0-IAD3.fdtp-nrt0000_iad3_fanops_net.load_five 1 `date +%s`" | nc  graphite 3003
 ```
+
+### TCP Dump to watch for metrics
+```bash
+tcpdump  -nn -A  not dst port 22 and not src port 22 and tcp | grep dc.sum.IAD2.FRP.BID.bids_requested
+```
