@@ -1,5 +1,6 @@
 HP Smart Array CLI
 
+https://blog.sleeplessbeastie.eu/2017/03/06/how-to-use-hp-command-line-array-configuration-utility/
 Disk Status
 /opt/smartstorageadmin/ssacli/bin/ssacli ctrl slot=0 pd all show status
 Disk Details
@@ -10,6 +11,8 @@ Logical Drive Details
 /opt/smartstorageadmin/ssacli/bin/ssacli ctrl slot=0 ld 2 show
 Controller Details
 /opt/smartstorageadmin/ssacli/bin/ssacli ctrl all show detail
+Modify Cache Ratio
+/opt/smartstorageadmin/ssacli/bin/ssacli ctrl slot=0 modify cr=25/75
 
 PSSC MegaCLi
 
