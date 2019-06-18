@@ -1,0 +1,7 @@
+# Look to see if a system has hyperthreading enabled
+# from: http://fibrevillage.com/sysadmin/155-how-to-tell-if-cpu-hyperthreading-enabled-on-linux
+
+% grep -E "cpu cores|siblings|physical id" /proc/cpuinfo | xargs -n 11 echo |sort |uniq
+physical id : 0 siblings : 20 cpu cores : 10
+physical id : 1 siblings : 20 cpu cores : 10
+
