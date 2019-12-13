@@ -1,0 +1,12 @@
+https://aws.amazon.com/premiumsupport/knowledge-center/es-domain-stuck-processing/
+
+
+# how many shards are allocated to each data node and how much disk space they are using
+curl -XGET <ES_Endpoint>/_cat/allocation?v
+
+# number of indicies and shards
+curl -XGET <ES_Endpoint>/_cat/indices
+curl -XGET <ES_Endpoint>/_cat/shards
+
+# Delete Indicies.. requires using an authorized user
+curl -XDELETE <ES_Endpoint>/oldindex1,oldindex2
