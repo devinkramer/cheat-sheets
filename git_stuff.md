@@ -127,3 +127,10 @@ git reset --hard origin/HEAD
 git reset —hard
 ```
 
+
+## tagging
+from the master branch you want to tag
+```bash
+git tag -a -m'message' [tag name]
+git push origin tags
+```
