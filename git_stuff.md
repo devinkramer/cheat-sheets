@@ -132,5 +132,5 @@ git reset —hard
 from the master branch you want to tag
 ```bash
 git tag -a -m'message' [tag name]
-git push origin tags
+git push origin [tag name]
 ```
