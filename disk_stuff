@@ -1,3 +1,5 @@
 smartctl -i /dev/sdm
 
 smartctl -a /dev/sde
+
+hdparm -I /dev/sde
