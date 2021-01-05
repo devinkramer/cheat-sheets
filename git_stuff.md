@@ -135,14 +135,19 @@ git tag -a -m'message' [tag name]
 git push origin [tag name]
 ```
 
-## RestAPI Call to Get list of Team members
+## Using RestAPI to Get list of Team members
+# First Find the team API endpoint
 ```bash
-curl -u dkramer@rubiconproject.com:xxxxxx --output /tmp/joe "https://github.rp-core.com/api/v3/organizations/655/team/250/members?page=1&per_page=100"
-curl -u dkramer@rubiconproject.com:xxxxxx --output /tmp/joe2 "https://github.rp-core.com/api/v3/organizations/655/team/250/members?page=2&per_page=100"
-curl -u dkramer@rubiconproject.com:xxxxxxx --output /tmp/joe3 "https://github.rp-core.com/api/v3/organizations/655/team/250/members?page=3&per_page=100"
+curl -u user:pass https://[github]/api/v3/orgs/[org]/teams/[team]
 ```
-
-## RestAPI to determine how many pages you need to pull
+# Then query that team end point with max per page value to see how many pages there are.
 ```bash
-curl -i -u dkramer@rubiconproject.com:xxxxxx "https://github.rp-core.com/api/v3/organizations/655/team/250/members
+curl -I -u user:pass https://[github]/api/v3/organizations/655/team/250/members?per_page=100
+```
+# Look for the Link line
+# Query each page and dump to output fieles
+```bash
+curl -u user:pass --output /tmp/joe "https://[github]/api/v3/organizations/655/team/250/members?page=1&per_page=100"
+curl -u user:pass --output /tmp/joe2 "https://[github]/api/v3/organizations/655/team/250/members?page=2&per_page=100"
+curl -u user:pass --output /tmp/joe3 "https://[github]/api/v3/organizations/655/team/250/members?page=3&per_page=100"
 ```
