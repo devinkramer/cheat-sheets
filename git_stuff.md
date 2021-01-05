@@ -134,3 +134,15 @@ from the master branch you want to tag
 git tag -a -m'message' [tag name]
 git push origin [tag name]
 ```
+
+## RestAPI Call to Get list of Team members
+```bash
+curl -u dkramer@rubiconproject.com:xxxxxx --output /tmp/joe "https://github.rp-core.com/api/v3/organizations/655/team/250/members?page=1&per_page=100"
+curl -u dkramer@rubiconproject.com:xxxxxx --output /tmp/joe2 "https://github.rp-core.com/api/v3/organizations/655/team/250/members?page=2&per_page=100"
+curl -u dkramer@rubiconproject.com:xxxxxxx --output /tmp/joe3 "https://github.rp-core.com/api/v3/organizations/655/team/250/members?page=3&per_page=100"
+```
+
+## RestAPI to determine how many pages you need to pull
+```bash
+curl -i -u dkramer@rubiconproject.com:xxxxxx "https://github.rp-core.com/api/v3/organizations/655/team/250/members
+```
