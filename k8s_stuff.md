@@ -46,21 +46,7 @@ Local Port Forward
 ```bash
 kubectl -n monitoring port-forward pods/thanos-querier-59d64746cd-6plhh 10901:10901
 ```
-# Changing Contexts
-Contexts are defined in your .kube/config file
 
-Show available Contexts
-```bash
-kubectl config get-contexts
-```
-Get Current Context
-```bash
-kubectl config current-context
-```
-Set Current Contexts
-```bash
-kubectl config set current-context [Context]
-```
 # Deployments
 
 Show deployments for a namespace
