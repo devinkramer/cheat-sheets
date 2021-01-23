@@ -1,0 +1,4 @@
+* Add cred profile to .aws/credential for the account and user [account/user]
+* Ensure you are logged into the vault via vault login -method ldap username=[user]
+* terraform init
+* terraform refresh
