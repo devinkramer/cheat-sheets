@@ -46,6 +46,10 @@ Local Port Forward
 ```bash
 kubectl -n monitoring port-forward pods/thanos-querier-59d64746cd-6plhh 10901:10901
 ```
+Restart a pod
+```bash
+kubeclt -n monitoring delete [pod]
+```
 
 # Deployments
 
@@ -69,6 +73,35 @@ Open a shell in the container
 ```bash
 kubectl exec -it -n monitoring ingress-nginx-thanos-grpc-controller-5d6b76f7c7-hvq4x -- /bin/sh
 ```
+
+# Kubernetes Secrets
+SSL Cert Example
+```bash
+kubectl -n [namespace] create secret tls [secret name] --key [file with key] --cert [file with cert]
+```
+File Example
+Yaml file containing AWS S3 Credentials
+```Yaml
+type: S3
+config:
+  bucket: bucket
+  endpoint: s3.us-west-2.amazonaws.com
+  region: [region]
+  access_key: xxxxxxxxx
+  insecure: false
+  signature_version2: false
+  secret_key: xxxxxxx
+```
+Create Secret Example
+```bash
+kubectl -n monitoring create secret generic thanos-objstore-config --from-file=objstore.yml=/path/to/yaml/in/git/storage-secret.yaml
+```
+Update Secret
+update the keys in the yaml
+```bash
+kubectl -n monitoring create secret generic thanos-objstore-config --from-file=objstore.yml=/path/to/yaml/in/git/storage-secret.yaml --dry-run -o yaml | kubectl apply -f -
+```
+
 
 
 # HELM
