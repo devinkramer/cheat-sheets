@@ -1,5 +1,21 @@
 # KUBECTL
 
+#  Contexts
+Contexts are defined in your .kube/config file
+
+Show available Contexts
+```bash
+kubectl config get-contexts
+```
+Get Current Context
+```bash
+kubectl config current-context
+```
+Set Current Contexts
+```bash
+kubectl config set current-context [Context]
+```
+
 ## Basics
 
 Show pods
